@@ -4,19 +4,37 @@
 
 Listens to the patient conversation. Writes the SOAP note. Cuts physicians' documentation time by 75%.
 
-## What you get
+## Stack
 
-- **HIPAA-compliant** — Audio never leaves the device unencrypted. We're BAA-ready on day one.
-- **Fills your EHR** — Epic, Athena, eClinicalWorks. The note lands where it needs to be.
-- **Two hours back per day** — Average physician saves 90 minutes of charting. Spend it on patients or sleep.
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript (strict)
+- **Styles:** Tailwind CSS v4
+- **Runtime:** Node.js via Vercel
 
-## Category
+## Run locally
 
-Health tech. Part of a 50-product exploration of high-demand consumer and SMB markets.
+```bash
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Deploy
+
+Push to `main` — Vercel auto-deploys. No environment variables required for the v0 skeleton.
+
+## Routes
+
+| Route | Description |
+|---|---|
+| `/` | Landing page with waitlist form |
+| `/try` | Interactive demo — paste a dialog, get a SOAP note |
+| `/api/waitlist` | `POST { email }` → proxies to waitlist API |
 
 ## Status
 
-Landing page live with interactive demo and functional waitlist.
+v0 skeleton. The `/try` page uses keyword rules to mock SOAP note generation. Real AI inference coming post-launch.
 
 - **Live:** https://mukundakatta.github.io/chartly/
 - **Waitlist API:** https://waitlist-api-sigma.vercel.app/api/waitlist
